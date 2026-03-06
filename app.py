@@ -58,3 +58,28 @@ def success():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+# ─── Part 3: To-Do route ─────────────────────────────────────────────────────
+todo_collection = db["todos"]
+
+@app.route("/todo")
+def todo():
+    return render_template("todo.html")
+
+@app.route("/submittodoitem", methods=["POST"])
+def submit_todo():
+    item_name        = request.form.get("itemName", "").strip()
+    item_description = request.form.get("itemDescription", "").strip()
+
+    if not item_name or not item_description:
+        return render_template("todo.html", error="All fields are required.")
+
+    try:
+        todo_collection.insert_one({
+            "itemName": item_name,
+            "itemDescription": item_description
+        })
+        return render_template("todo.html", success="To-Do item added successfully!")
+    except PyMongoError as e:
+        return render_template("todo.html", error=f"Database error: {str(e)}")
