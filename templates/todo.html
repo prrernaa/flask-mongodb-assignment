@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 40px;
+      width: 100%;
+      max-width: 460px;
+    }
+    h1 { font-size: 1.6rem; margin-bottom: 6px; color: #1a1a2e; }
+    p.sub { font-size: 0.9rem; color: #666; margin-bottom: 24px; }
+    label { display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 5px; }
+    input, textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+      outline: none;
+    }
+    input:focus, textarea:focus { border-color: #4f46e5; }
+    textarea { resize: vertical; min-height: 100px; }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4f46e5;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: #4338ca; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>📝 To-Do List</h1>
+    <p class="sub">Add a new to-do item below.</p>
+    <form action="/submittodoitem" method="POST">
+      <label for="itemName">Item Name</label>
+      <input type="text" id="itemName" name="itemName" placeholder="e.g. Buy groceries" required />
+
+      <label for="itemDescription">Item Description</label>
+      <textarea id="itemDescription" name="itemDescription" placeholder="Describe the task..." required></textarea>
+
+      <button type="submit">Add To-Do →</button>
+    </form>
+  </div>
+</body>
+</html>
