@@ -1,12 +1,6 @@
 [
-  {
-    "id": 1,
-    "name": "Prerna",
-    "role": "Backend Developer"
-  },
-  {
-    "id": 2,
-    "name": "Rahul",
-    "role": "Frontend Developer"
-  }
+  { "id": 1, "name": "Prerna Sharma", "email": "prerna@example.com", "role": "Full Stack Developer" },
+  { "id": 2, "name": "Raj Mehta",     "email": "raj@example.com",    "role": "Data Scientist"      },
+  { "id": 3, "name": "Sneha Gupta",   "email": "sneha@example.com",  "role": "DevOps Engineer"     },
+  { "id": 4, "name": "Amit Kumar",    "email": "amit@example.com",   "role": "ML Engineer"         }
 ]
